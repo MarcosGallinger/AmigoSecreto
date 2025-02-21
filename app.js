@@ -32,11 +32,20 @@ function sortearAmigo(){
         let sorteoAmigoSecreto = Math.floor(Math.random() * listaAmigos.length);
         asignarTextoElemento('#resultado', listaAmigos[sorteoAmigoSecreto]);
         listaAmigos.length = 0;
+        lanzarConfeti()
         actualizarUl();
         } else {
             alert("Sorteo Finalizado");
             limpiarCaja();
             }
+}
+
+function lanzarConfeti() {
+    confetti({
+        particleCount: 500,
+        spread: 70, 
+        origin: { y: 0.6 } 
+    });
 }
 
 function limpiarCaja(){
