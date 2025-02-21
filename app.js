@@ -44,6 +44,7 @@ function sortearAmigo(){
             }
 }
 
+
 function lanzarConfeti() {
     confetti({
         particleCount: 2000,
@@ -54,6 +55,10 @@ function lanzarConfeti() {
 
 function limpiarCaja(){
     let ul = document.querySelector('ul');
+    let h2 = document.querySelector('#h2');
+    if (h2) {
+        h2.innerHTML = "Digite el nombre de sus amigos";
+    }
     if (ul){
         ul.innerHTML = '';
     }
