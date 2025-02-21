@@ -11,14 +11,9 @@ function asignarTextoElemento(elemento, texto) {
 
 function agregarAmigo() {
     let amigoUsuario = document.getElementById("amigo").value;
-    if (amigoUsuario.text() == "") {
-        alert('Ingrese Un Nombre');
-        return false;
-    }else if{
         document.querySelector('#amigo').value = '';
         listaAmigos.push(amigoUsuario);
         actualizarUl();
-    }
     }
 
     function actualizarUl() {
