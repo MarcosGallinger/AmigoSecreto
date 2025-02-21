@@ -11,10 +11,14 @@ function asignarTextoElemento(elemento, texto) {
 
 function agregarAmigo() {
     limpiarCaja();
-    let amigoUsuario = document.getElementById("amigo").value;  
-    document.querySelector('#amigo').value = '';
+    let amigoUsuario = document.getElementById("amigo").value; 
+    if (amigoUsuario){
+        document.querySelector('#amigo').value = '';
     listaAmigos.push(amigoUsuario);
     actualizarUl();
+    } else {
+        alert("Debes ingresar un nombre de amigo");
+    }
     }
 
     function actualizarUl() {
@@ -26,11 +30,15 @@ function agregarAmigo() {
     }
 
 function sortearAmigo(){
-    limpiarCaja();
-    let sorteoAmigoSecreto = Math.floor(Math.random() * listaAmigos.length);
-    asignarTextoElemento('#resultado', listaAmigos[sorteoAmigoSecreto]);
-    listaAmigos.length = 0;
-    return;
+    if (listaAmigos.length > 0){
+        limpiarCaja();
+        let sorteoAmigoSecreto = Math.floor(Math.random() * listaAmigos.length);
+        asignarTextoElemento('#resultado', listaAmigos[sorteoAmigoSecreto]);
+        listaAmigos.length = 0;
+        actualizarUl();
+        } else {
+            alert("Sorteo Finalizado");
+            }
 }
 
 function limpiarCaja(){
