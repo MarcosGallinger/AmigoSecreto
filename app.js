@@ -42,8 +42,8 @@ function sortearAmigo(){
 
 function lanzarConfeti() {
     confetti({
-        particleCount: 500,
-        spread: 70, 
+        particleCount: 2000,
+        spread: 120, 
         origin: { y: 0.6 } 
     });
 }
