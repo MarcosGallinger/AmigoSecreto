@@ -1,7 +1,4 @@
 const listaAmigos = [];
-let Nombre = document.getElementById('listaAmigos');
-
-
 
 function asignarTextoElemento(elemento, texto) {
     let elementoHTML = document.querySelector(elemento)
@@ -17,7 +14,7 @@ function agregarAmigo() {
     listaAmigos.push(amigoUsuario);
     actualizarUl();
     } else {
-        alert("Debes ingresar un nombre de amigo");
+        alert("Debes ingresar el nombre de tu amigo");
     }
     }
 
@@ -38,13 +35,19 @@ function sortearAmigo(){
         actualizarUl();
         } else {
             alert("Sorteo Finalizado");
+            limpiarCaja();
             }
 }
 
 function limpiarCaja(){
     let ul = document.querySelector('ul');
-    ul.innerHTML = '';
-    amigosCadena = "";
+    if (ul){
+        ul.innerHTML = '';
+    }
+    let resultado = document.querySelector('#resultado');
+    if (resultado){
+        resultado.innerHTML = '';
+        }
 }
   
 limpiarCaja();
