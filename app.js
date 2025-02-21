@@ -34,6 +34,7 @@ function sortearAmigo(){
         limpiarCaja();
         let sorteoAmigoSecreto = Math.floor(Math.random() * listaAmigos.length);
         asignarTextoElemento('#resultado', listaAmigos[sorteoAmigoSecreto]);
+        asignarTextoElemento('#h2', "¡El amigo secreto es: ");
         listaAmigos.length = 0;
         lanzarConfeti()
         actualizarUl();
