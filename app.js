@@ -10,10 +10,11 @@ function asignarTextoElemento(elemento, texto) {
 }
 
 function agregarAmigo() {
-    let amigoUsuario = document.getElementById("amigo").value;
-        document.querySelector('#amigo').value = '';
-        listaAmigos.push(amigoUsuario);
-        actualizarUl();
+    limpiarCaja();
+    let amigoUsuario = document.getElementById("amigo").value;  
+    document.querySelector('#amigo').value = '';
+    listaAmigos.push(amigoUsuario);
+    actualizarUl();
     }
 
     function actualizarUl() {
@@ -33,7 +34,6 @@ function sortearAmigo(){
 }
 
 function limpiarCaja(){
-    document.querySelector('#amigo').value = '';
     let ul = document.querySelector('ul');
     ul.innerHTML = '';
     amigosCadena = "";
