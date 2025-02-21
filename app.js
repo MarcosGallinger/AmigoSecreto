@@ -9,13 +9,16 @@ function asignarTextoElemento(elemento, texto) {
 function agregarAmigo() {
     limpiarCaja();
     let amigoUsuario = document.getElementById("amigo").value; 
-    if (amigoUsuario){
+    if (/[0-9]/.test(amigoUsuario)) {
+        alert("Por favor, ingrese un nombre válido sin números.");
+        return;
+        } if (amigoUsuario){
         document.querySelector('#amigo').value = '';
-    listaAmigos.push(amigoUsuario);
-    actualizarUl();
-    } else {
-        alert("Debes ingresar el nombre de tu amigo");
-    }
+        listaAmigos.push(amigoUsuario);
+        actualizarUl();
+        } else {
+            alert("Debes ingresar el nombre de tu amigo");
+        }
     }
 
     function actualizarUl() {
