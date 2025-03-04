@@ -8,11 +8,12 @@ function asignarTextoElemento(elemento, texto) {
 
 function agregarAmigo() {
     limpiarCaja();
-    let amigoUsuario = document.getElementById("amigo").value; 
+    let amigoUsuario = document.getElementById("amigo").value.trim(); 
     if (/[0-9]/.test(amigoUsuario)) {
         alert("Por favor, ingrese un nombre válido sin números.");
         return;
         } if (amigoUsuario){
+
         document.querySelector('#amigo').value = '';
         listaAmigos.push(amigoUsuario);
         actualizarUl();
@@ -22,11 +23,11 @@ function agregarAmigo() {
     }
 
     function actualizarUl() {
-        let amigosCadena = "";
+        let amigosElegidos = "";
         for (let i = 0; i < listaAmigos.length; i++) {
-            amigosCadena += listaAmigos[i] + "<br>";
+            amigosElegidos += listaAmigos[i] + "<br>";
         }
-        asignarTextoElemento('ul', amigosCadena);
+        asignarTextoElemento('ul', amigosElegidos);
     }
 
 function sortearAmigo(){
