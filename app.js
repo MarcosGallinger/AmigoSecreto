@@ -24,7 +24,7 @@ function agregarAmigo() {
     function actualizarUl() {
         let amigosCadena = "";
         for (let i = 0; i < listaAmigos.length; i++) {
-            amigosCadena += listaAmigos[i] + "\n";
+            amigosCadena += listaAmigos[i] + "<br>";
         }
         asignarTextoElemento('ul', amigosCadena);
     }
